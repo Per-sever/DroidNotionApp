@@ -12,16 +12,16 @@ import javax.inject.Inject
 class NotionDbRepositoryImpl @Inject constructor() : NotionDbRepository {
 
     override fun loadCompetenceList() {
+        val resultMap = mutableMapOf<String, String>()
         CoroutineScope(Dispatchers.IO).launch {
             val result = ApiFactory.apiService.getCompetenceList()
             result.results?.map {
+                val idCompetence = it.id
                 it.properties?.name?.title?.map {
-                    Log.d(
-                        "Hello",
-                        it.text?.content.toString()
-                    )
+                    resultMap.put(idCompetence.toString(), it.text?.content.toString())
                 }
             }
+            Log.d("Hello", resultMap.toString())
         }
 
     }
