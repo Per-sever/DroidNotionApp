@@ -46,7 +46,7 @@ data class ResultDTO(
 
     @SerializedName("properties")
     @Expose
-    var properties: PropertiesDTO? = null,
+    var properties: PropertiesCompetenceDTO? = null,
 
     @SerializedName("url")
     @Expose
