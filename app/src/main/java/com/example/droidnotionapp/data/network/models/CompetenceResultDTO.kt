@@ -3,7 +3,7 @@ package com.example.droidnotionapp.data.network.models
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class ResultDTO(
+data class CompetenceResultDTO(
     @SerializedName("object")
     @Expose
     var `object`: String? = null,
@@ -46,7 +46,7 @@ data class ResultDTO(
 
     @SerializedName("properties")
     @Expose
-    var properties: PropertiesCompetenceDTO? = null,
+    var properties: CompetencePropertiesDTO? = null,
 
     @SerializedName("url")
     @Expose

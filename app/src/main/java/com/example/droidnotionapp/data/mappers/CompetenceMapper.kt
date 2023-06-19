@@ -1,11 +1,11 @@
 package com.example.droidnotionapp.data.mappers
 
-import com.example.droidnotionapp.data.network.models.DbQueryDTO
+import com.example.droidnotionapp.data.network.models.CompetenceDbQueryDTO
 import com.example.droidnotionapp.domain.models.CompetenceEntity
 import javax.inject.Inject
 
 class CompetenceMapper @Inject constructor() {
-     fun mapJSONResponseToCompetenceEntityList(result: DbQueryDTO):
+     fun mapJSONResponseToCompetenceEntityList(result: CompetenceDbQueryDTO):
             List<CompetenceEntity> {
         val competenceEntityList = mutableListOf<CompetenceEntity>()
         result.results?.map {

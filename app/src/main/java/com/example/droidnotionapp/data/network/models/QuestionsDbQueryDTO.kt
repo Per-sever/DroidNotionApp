@@ -3,14 +3,14 @@ package com.example.droidnotionapp.data.network.models
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class DbQueryDTO(
+data class QuestionsDbQueryDTO (
     @SerializedName("object")
     @Expose
     var `object`: String? = null,
 
     @SerializedName("results")
     @Expose
-    var results: List<ResultDTO>? = null,
+    var results: List<QuestionResultDTO>? = null,
 
     @SerializedName("next_cursor")
     @Expose
