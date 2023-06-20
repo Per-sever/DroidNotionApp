@@ -10,7 +10,7 @@ data class QuestionsDbQueryDTO (
 
     @SerializedName("results")
     @Expose
-    var results: List<QuestionResultDTO>? = null,
+    var results: List<QuestionResultDTO>,
 
     @SerializedName("next_cursor")
     @Expose

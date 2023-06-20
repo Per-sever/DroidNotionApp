@@ -46,7 +46,7 @@ data class QuestionResultDTO(
 
     @SerializedName("properties")
     @Expose
-    var properties: QuestionPropertiesDTO? = null,
+    var properties: QuestionPropertiesDTO,
 
     @SerializedName("url")
     @Expose

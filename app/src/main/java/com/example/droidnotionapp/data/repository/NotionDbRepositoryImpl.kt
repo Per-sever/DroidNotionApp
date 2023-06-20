@@ -2,6 +2,9 @@ package com.example.droidnotionapp.data.repository
 
 import com.example.droidnotionapp.data.mappers.CompetenceMapper
 import com.example.droidnotionapp.data.network.ApiFactory
+import com.example.droidnotionapp.data.network.Filter
+import com.example.droidnotionapp.data.network.Relation
+import com.example.droidnotionapp.data.network.RequestBody
 import com.example.droidnotionapp.data.network.models.QuestionPropertiesDTO
 import com.example.droidnotionapp.domain.NotionDbRepository
 import com.example.droidnotionapp.domain.models.CompetenceEntity
@@ -17,7 +20,11 @@ class NotionDbRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getQuestionsList(idCompetence: String): List<QuestionPropertiesDTO> {
-        TODO("Not yet implemented")
+        val relation = Relation(idCompetence)
+        val filter = Filter("Type", relation)
+        val requestBody = RequestBody(filter)
+        val response = ApiFactory.apiService.getQuestionsList(requestBody = requestBody)
+        return response.results.map { it.properties }
     }
 
     override fun filterCompetenceList(): List<CompetenceEntity> {
